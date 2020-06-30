@@ -1,0 +1,10 @@
+{
+  "name": "kitchen",
+  "image": "node:12.18.0-alpine",
+  "forwardPorts": [3000],
+  // "extensions": ["dbaeumer.vscode-eslint"]  
+  "settings": { 
+		"terminal.integrated.shell.linux": null
+  },
+  "postCreateCommand": "apk update && apk add git openssh vim",
+}
