@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { Layout } from "../src/components/Layout"
+import { Container } from "../src/components/Container"
 import { Card } from "../src/components/Card"
 
 import { RemoveSpaces } from "../src/components/RemoveSpaces"
@@ -11,9 +12,11 @@ const Index = () => (
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Card title="RemoveSpaces">
-        <RemoveSpaces />
-      </Card>
+      <Container>
+        <Card title="RemoveSpaces">
+          <RemoveSpaces />
+        </Card>
+      </Container>
 
     </Layout>
   )
