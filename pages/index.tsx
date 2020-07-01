@@ -1,5 +1,8 @@
 import Head from 'next/head'
 import { Layout } from "../src/components/Layout"
+import { Card } from "../src/components/Card"
+
+import { RemoveSpaces } from "../src/components/RemoveSpaces"
 
 const Index = () => (
     <Layout>
@@ -8,9 +11,10 @@ const Index = () => (
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className="title">
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </h1>
+      <Card title="RemoveSpaces">
+        <RemoveSpaces />
+      </Card>
+
     </Layout>
   )
 
