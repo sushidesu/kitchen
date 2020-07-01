@@ -1,11 +1,19 @@
-import React from "react"
+import React, { useState, useCallback, useMemo } from "react"
 import styled from "styled-components"
 
 export const RemoveSpaces = () => {
+  const [text, setText] = useState("")
+
+  const change = useCallback((event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setText(event.target.value)
+  }, [setText])
+
+  const removed = useMemo(() => text.replace(/\s/g, ""), [text])
+
   return (
     <Wrapper>
-      <Textarea />
-      <Textarea />
+      <Textarea value={text} onChange={change}/>
+      <Textarea value={removed} readOnly />
     </Wrapper>
   )
 }
