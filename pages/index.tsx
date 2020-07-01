@@ -7,7 +7,7 @@ import { RemoveSpaces } from "../src/components/RemoveSpaces"
 const Index = () => (
     <Layout>
       <Head>
-        <title>kitchen</title>
+        <title>Kitchen</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

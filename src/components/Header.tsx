@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 export const Header = () => (
-  <Wrapper>Kitchen Dayo</Wrapper>
+  <Wrapper>Kitchen (dayo)</Wrapper>
 )
 
 const Wrapper = styled.header`
