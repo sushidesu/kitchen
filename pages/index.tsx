@@ -13,7 +13,7 @@ const Index = () => (
       </Head>
 
       <Container>
-        <Card title="RemoveSpaces">
+        <Card title="Remove Line Breaks">
           <RemoveSpaces />
         </Card>
       </Container>
