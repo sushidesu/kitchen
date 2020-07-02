@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "kitchen",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static",
+      "config": {
+        "distDir": "out"
+      }
+    }
+  ]
+}
