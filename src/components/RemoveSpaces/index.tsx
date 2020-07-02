@@ -8,7 +8,7 @@ export const RemoveSpaces = () => {
     setText(event.target.value)
   }, [setText])
 
-  const removed = useMemo(() => text.replace(/\s/g, ""), [text])
+  const removed = useMemo(() => text.replace(/\r?\n/g, ""), [text])
 
   return (
     <Wrapper>
