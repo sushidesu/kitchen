@@ -1,6 +1,7 @@
 import React, { useMemo } from "react"
 import styled from "styled-components"
 import { useInput } from "../../hooks/useInput"
+import { Textarea } from "../Textarea"
 
 export const RemoveLineBreaks = () => {
   const { text, change } = useInput()
@@ -24,10 +25,4 @@ const Wrapper = styled.div`
   & > textarea:first-child {
     margin-bottom: 1em;
   }
-`
-
-const Textarea = styled.textarea`
-  min-width: 300px;
-  min-height: 100px;
-  resize: none;
 `
