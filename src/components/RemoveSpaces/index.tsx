@@ -1,12 +1,9 @@
-import React, { useState, useCallback, useMemo } from "react"
+import React, { useMemo } from "react"
 import styled from "styled-components"
+import { useInput } from "../../hooks/useInput"
 
 export const RemoveSpaces = () => {
-  const [text, setText] = useState("")
-
-  const change = useCallback((event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setText(event.target.value)
-  }, [setText])
+  const { text, change } = useInput()
 
   const removed = useMemo(() => text.replace(/\r?\n/g, ""), [text])
 
