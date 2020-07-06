@@ -2,7 +2,7 @@ import React, { useMemo } from "react"
 import styled from "styled-components"
 import { useInput } from "../../hooks/useInput"
 
-export const RemoveSpaces = () => {
+export const RemoveLineBreaks = () => {
   const { text, change } = useInput()
 
   const removed = useMemo(() => text.replace(/\r?\n/g, ""), [text])

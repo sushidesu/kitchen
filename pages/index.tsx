@@ -3,7 +3,7 @@ import { Layout } from "../src/components/Layout"
 import { Container } from "../src/components/Container"
 import { Card } from "../src/components/Card"
 
-import { RemoveSpaces } from "../src/components/RemoveSpaces"
+import { RemoveLineBreaks } from "../src/components/RemoveLineBreaks"
 
 const Index = () => (
     <Layout>
@@ -14,7 +14,7 @@ const Index = () => (
 
       <Container>
         <Card title="Remove Line Breaks">
-          <RemoveSpaces />
+          <RemoveLineBreaks />
         </Card>
       </Container>
 
