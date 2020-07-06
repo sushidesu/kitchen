@@ -4,6 +4,7 @@ import { Container } from "../src/components/Container"
 import { Card } from "../src/components/Card"
 
 import { RemoveLineBreaks } from "../src/components/RemoveLineBreaks"
+import { CountLength } from "../src/components/CountLength"
 
 const Index = () => (
     <Layout>
@@ -15,6 +16,9 @@ const Index = () => (
       <Container>
         <Card title="Remove Line Breaks">
           <RemoveLineBreaks />
+        </Card>
+        <Card title="Count Length" >
+          <CountLength />
         </Card>
       </Container>
 
