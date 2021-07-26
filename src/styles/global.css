@@ -6,9 +6,10 @@
 }
 
 html,body,#__next {
-  width: 100vw;
   height: 100vh;
-  overflow: hidden;
+}
+
+body {
   font-family: sans-serif;
   font-size: 16px;
 }
