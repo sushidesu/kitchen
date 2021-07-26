@@ -1,6 +1,9 @@
-import { useState, useCallback } from "react"
+import React, { useState, useCallback } from "react"
 
-export const useInput = (init?: string) => {
+export const useInput = (init?: string): {
+  text: string
+  change: (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement>) => void
+} => {
   const [text, setText] = useState(init || "")
 
   const change = useCallback((event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement>) => {

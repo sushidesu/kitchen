@@ -8,7 +8,7 @@ import { CountLength } from "../components/CountLength"
 import { ConvertEnv } from '../components/ConvertEnv'
 import { CleanData } from "../components/CleanData"
 
-const Index = () => (
+const Index = (): JSX.Element => (
     <Layout>
       <Head>
         <title>Kitchen</title>

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Footer = () => (
+export const Footer = (): JSX.Element => (
   <Wrapper>© sushidesu</Wrapper>
 )
 

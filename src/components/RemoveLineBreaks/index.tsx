@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { useInput } from "../../hooks/useInput"
 import { Textarea } from "../Textarea"
 
-export const RemoveLineBreaks = () => {
+export const RemoveLineBreaks = (): JSX.Element => {
   const { text, change } = useInput()
 
   const removed = useMemo(() => text.replace(/\r?\n/g, ""), [text])

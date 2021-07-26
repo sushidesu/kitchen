@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { useInput } from "../../hooks/useInput"
 import { Textarea } from "../Textarea"
 
-export const CountLength = () => {
+export const CountLength = (): JSX.Element => {
   const { text, change } = useInput()
 
   return (
