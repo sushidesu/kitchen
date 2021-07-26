@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import { css } from "styled-components"
 import { useInput } from "../../hooks/useInput"
 import { Textarea } from "../Textarea"
 
@@ -24,23 +24,21 @@ export function ConvertEnv(): JSX.Element {
     .join("\n")
 
   return (
-    <Wrapper>
+    <div css={css`
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      & > * + * {
+        margin-top: 1em;
+      }
+    `}>
       <div>
         <label>Prefix</label>
         <input value={prefix} onChange={changePrefix} />
       </div>
       <Textarea value={text} onChange={change} />
       <Textarea readOnly value={converted} />
-    </Wrapper>
+    </div>
   )
 }
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  & > * + * {
-    margin-top: 1em;
-  }
-`
