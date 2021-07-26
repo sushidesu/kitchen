@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src --ext .ts,.tsx"
   },
   "dependencies": {
     "next": "^11.0.1",
@@ -21,8 +22,13 @@
     "@types/node": "^16.4.3",
     "@types/react": "^17.0.15",
     "@types/styled-components": "^5.1.11",
+    "@typescript-eslint/eslint-plugin": "^4.28.4",
+    "@typescript-eslint/parser": "^4.28.4",
     "babel-plugin-styled-components": "^1.13.2",
     "ts-jest": "^27.0.4",
+    "eslint": "^7.31.0",
+    "eslint-config-next": "^11.0.1",
+    "eslint-plugin-react": "^7.24.0",
     "typescript": "^4.3.5"
   },
   "peerDependencies": {
