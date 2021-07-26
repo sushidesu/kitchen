@@ -5,6 +5,7 @@ import { Card } from "../src/components/Card"
 
 import { RemoveLineBreaks } from "../src/components/RemoveLineBreaks"
 import { CountLength } from "../src/components/CountLength"
+import { ConvertEnv } from '../src/components/ConvertEnv'
 
 const Index = () => (
     <Layout>
@@ -19,6 +20,9 @@ const Index = () => (
         </Card>
         <Card title="Count Length" >
           <CountLength />
+        </Card>
+        <Card title="Convert Env" >
+          <ConvertEnv />
         </Card>
       </Container>
 
