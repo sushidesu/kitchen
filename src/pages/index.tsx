@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import { Layout } from "../src/components/Layout"
-import { Container } from "../src/components/Container"
-import { Card } from "../src/components/Card"
+import { Layout } from "../components/Layout"
+import { Container } from "../components/Container"
+import { Card } from "../components/Card"
 
-import { RemoveLineBreaks } from "../src/components/RemoveLineBreaks"
-import { CountLength } from "../src/components/CountLength"
-import { ConvertEnv } from '../src/components/ConvertEnv'
+import { RemoveLineBreaks } from "../components/RemoveLineBreaks"
+import { CountLength } from "../components/CountLength"
+import { ConvertEnv } from '../components/ConvertEnv'
 
 const Index = () => (
     <Layout>
