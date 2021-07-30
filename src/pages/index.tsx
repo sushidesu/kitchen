@@ -6,6 +6,7 @@ import { Card } from "../components/Card"
 import { RemoveLineBreaks } from "../components/RemoveLineBreaks"
 import { CountLength } from "../components/CountLength"
 import { ConvertEnv } from '../components/ConvertEnv'
+import { CleanData } from "../components/CleanData"
 
 const Index = () => (
     <Layout>
@@ -23,6 +24,9 @@ const Index = () => (
         </Card>
         <Card title="Convert Env" >
           <ConvertEnv />
+        </Card>
+        <Card title="Clean the data">
+          <CleanData />
         </Card>
       </Container>
     </Layout>
