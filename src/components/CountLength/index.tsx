@@ -8,7 +8,7 @@ export const CountLength = (): JSX.Element => {
 
   return (
     <Wrapper>
-      <Count>{ text.length }</Count>
+      <Count>{text.length}</Count>
       <Textarea value={text} onChange={change} />
     </Wrapper>
   )

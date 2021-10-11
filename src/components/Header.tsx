@@ -5,7 +5,7 @@ import { Container } from "./Container"
 export const Header = (): JSX.Element => (
   <Wrapper>
     <Container>
-      <Title>Kitchen (dayo)</Title>  
+      <Title>Kitchen (dayo)</Title>
     </Container>
   </Wrapper>
 )

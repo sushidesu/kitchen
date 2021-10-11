@@ -1,8 +1,6 @@
 import styled from "styled-components"
 
-export const Footer = (): JSX.Element => (
-  <Wrapper>© sushidesu</Wrapper>
-)
+export const Footer = (): JSX.Element => <Wrapper>© sushidesu</Wrapper>
 
 const Wrapper = styled.footer`
   background-color: rgb(250, 250, 250);

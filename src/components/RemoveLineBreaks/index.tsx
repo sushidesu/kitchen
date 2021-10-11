@@ -10,7 +10,7 @@ export const RemoveLineBreaks = (): JSX.Element => {
 
   return (
     <Wrapper>
-      <Textarea value={text} onChange={change}/>
+      <Textarea value={text} onChange={change} />
       <Textarea value={removed} readOnly />
     </Wrapper>
   )
