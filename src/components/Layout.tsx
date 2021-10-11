@@ -6,9 +6,7 @@ import { Footer } from "./Footer"
 export const Layout: React.FC = ({ children }) => (
   <Wrapper>
     <Header />
-    <main>
-      { children }
-    </main>
+    <main>{children}</main>
     <Footer />
   </Wrapper>
 )

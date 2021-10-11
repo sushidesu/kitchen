@@ -2,10 +2,10 @@ import React from "react"
 import styled from "styled-components"
 import { Container } from "./Container"
 
-export const Header = () => (
+export const Header = (): JSX.Element => (
   <Wrapper>
     <Container>
-      <Title>Kitchen (dayo)</Title>  
+      <Title>Kitchen (dayo)</Title>
     </Container>
   </Wrapper>
 )
