@@ -3,7 +3,8 @@ import styled from "styled-components"
 
 type CardProps = {
   children?: React.ReactNode
-  title?: string
+  title: string
+  description?: string
 }
 
 export const Card = ({ children, title }: CardProps): JSX.Element => (
