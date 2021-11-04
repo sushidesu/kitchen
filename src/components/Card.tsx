@@ -1,11 +1,8 @@
 import React from "react"
 import styled from "styled-components"
+import { ITool } from "../interface/tool"
 
-type CardProps = {
-  title: string
-  description?: string
-  component: () => JSX.Element
-}
+type CardProps = ITool
 
 export const Card = ({
   component: Component,
