@@ -1,11 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 
-type Props = {
+type CardProps = {
+  children?: React.ReactNode
   title?: string
 }
 
-export const Card: React.FC<Props> = ({ children, title }) => (
+export const Card = ({ children, title }: CardProps): JSX.Element => (
   <Wrapper>
     <h2>{title}</h2>
     {children}
