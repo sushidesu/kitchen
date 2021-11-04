@@ -10,9 +10,11 @@ type CardProps = {
 export const Card = ({
   component: Component,
   title,
+  description,
 }: CardProps): JSX.Element => (
   <Wrapper>
     <h2>{title}</h2>
+    <p>{description}</p>
     <Component />
   </Wrapper>
 )
