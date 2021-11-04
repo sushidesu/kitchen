@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { Textarea } from "../../components/Textarea"
+import { Textarea } from "@chakra-ui/react"
 import { useInput } from "../../hooks/useInput"
 import { cleanData } from "./cleanData"
 

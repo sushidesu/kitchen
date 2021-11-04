@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 import { useInput } from "../../hooks/useInput"
-import { Textarea } from "../../components/Textarea"
+import { Textarea } from "@chakra-ui/react"
 import { Input } from "../../components/Input"
 
 export function ConvertEnv(): JSX.Element {

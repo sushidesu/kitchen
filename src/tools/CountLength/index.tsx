@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { useInput } from "../../hooks/useInput"
-import { Textarea } from "../../components/Textarea"
+import { Textarea } from "@chakra-ui/react"
 
 export const CountLength = (): JSX.Element => {
   const { text, change } = useInput()
