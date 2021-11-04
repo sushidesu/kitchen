@@ -1,7 +1,7 @@
 import { css } from "styled-components"
 import { useInput } from "../../hooks/useInput"
-import { Textarea } from "../Textarea"
-import { Input } from "../Input"
+import { Textarea } from "../../components/Textarea"
+import { Input } from "../../components/Input"
 
 export function ConvertEnv(): JSX.Element {
   const { text: prefix, change: changePrefix } = useInput()

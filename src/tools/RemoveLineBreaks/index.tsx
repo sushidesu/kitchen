@@ -1,7 +1,7 @@
 import React, { useMemo } from "react"
 import styled from "styled-components"
 import { useInput } from "../../hooks/useInput"
-import { Textarea } from "../Textarea"
+import { Textarea } from "../../components/Textarea"
 
 export const RemoveLineBreaks = (): JSX.Element => {
   const { text, change } = useInput()

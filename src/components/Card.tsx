@@ -1,14 +1,18 @@
 import React from "react"
 import styled from "styled-components"
+import { ITool } from "../interface/tool"
 
-type Props = {
-  title?: string
-}
+type CardProps = ITool
 
-export const Card: React.FC<Props> = ({ children, title }) => (
+export const Card = ({
+  component: Component,
+  title,
+  description,
+}: CardProps): JSX.Element => (
   <Wrapper>
     <h2>{title}</h2>
-    {children}
+    <p>{description}</p>
+    <Component />
   </Wrapper>
 )
 

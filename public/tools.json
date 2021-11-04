@@ -1,0 +1,24 @@
+{
+  "clean-the-data": {
+    "slug": "clean-the-data",
+    "title": "Clean the Data",
+    "componentName": "CleanData"
+  },
+  "convert-env": {
+    "slug": "convert-env",
+    "title": "Convert Env",
+    "description": "JSONのデータをenvのフォーマットに変換します",
+    "componentName": "ConvertEnv"
+  },
+  "count-length": {
+    "slug": "count-length",
+    "title": "Count Length",
+    "description": "文字数をカウントします",
+    "componentName": "CountLength"
+  },
+  "remove-line-breaks": {
+    "slug": "remove-line-breaks",
+    "title": "Remove Line Breaks",
+    "componentName": "RemoveLineBreaks"
+  }
+}

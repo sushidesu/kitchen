@@ -6,7 +6,5 @@ export const cleanData = (text: string): string => {
     return result
   }
 
-  return text.split("\n")
-    .map(converter)
-    .join("\n")
+  return text.split("\n").map(converter).join("\n")
 }
