@@ -1,4 +1,7 @@
+import { GetStaticProps } from "next"
 import Head from "next/head"
+import path from "path"
+import { readdirSync } from "fs"
 import { ITool } from "../interface/tool"
 
 import { Layout } from "../components/Layout"
@@ -9,6 +12,15 @@ import { RemoveLineBreaks } from "../tools/RemoveLineBreaks"
 import { CountLength } from "../tools/CountLength"
 import { ConvertEnv } from "../tools/ConvertEnv"
 import { CleanData } from "../tools/CleanData"
+
+export const getStaticProps: GetStaticProps = (context) => {
+  const fuga = readdirSync(path.join(__dirname))
+  console.log(fuga)
+
+  return {
+    props: {}, // will be passed to the page component as props
+  }
+}
 
 const Index = (): JSX.Element => {
   const tools: ITool[] = [
