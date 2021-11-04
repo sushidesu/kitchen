@@ -16,18 +16,10 @@ const Index = (): JSX.Element => (
     </Head>
 
     <Container>
-      <Card title="Remove Line Breaks">
-        <RemoveLineBreaks />
-      </Card>
-      <Card title="Count Length">
-        <CountLength />
-      </Card>
-      <Card title="Convert Env">
-        <ConvertEnv />
-      </Card>
-      <Card title="Clean the data">
-        <CleanData />
-      </Card>
+      <Card title="Remove Line Breaks" component={RemoveLineBreaks} />
+      <Card title="Count Length" component={CountLength} />
+      <Card title="Convert Env" component={ConvertEnv} />
+      <Card title="Clean the data" component={CleanData} />
     </Container>
   </Layout>
 )

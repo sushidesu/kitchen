@@ -2,15 +2,18 @@ import React from "react"
 import styled from "styled-components"
 
 type CardProps = {
-  children?: React.ReactNode
   title: string
   description?: string
+  component: () => JSX.Element
 }
 
-export const Card = ({ children, title }: CardProps): JSX.Element => (
+export const Card = ({
+  component: Component,
+  title,
+}: CardProps): JSX.Element => (
   <Wrapper>
     <h2>{title}</h2>
-    {children}
+    <Component />
   </Wrapper>
 )
 
