@@ -9,12 +9,15 @@ const TOOLS_DIR = path.join(ROOT_DIR, "src", "tools")
 function main() {
   const toolDirs = readdirSync(path.join(TOOLS_DIR))
   console.log(toolDirs)
-  const configFiles = toolDirs.map(dirName => path.join(TOOLS_DIR, dirName, TOOL_FILE_NAME))
+  const configFiles = toolDirs.map(dirName => [path.join(TOOLS_DIR, dirName, TOOL_FILE_NAME), dirName])
 
   const tools = {}
-  configFiles.forEach(filePath => {
+  configFiles.forEach(([filePath, dirName]) => {
     const tool = require(filePath)
-    tools[tool.slug] = tool
+    tools[tool.slug] = {
+      ...tool,
+      componentName: dirName
+    }
   })
   writeFileSync(path.join(ROOT_DIR, "public", "tools.json"), JSON.stringify(tools, undefined , 2))
 }

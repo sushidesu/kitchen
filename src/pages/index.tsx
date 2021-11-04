@@ -1,7 +1,6 @@
-import { GetStaticProps } from "next"
+import { GetStaticProps, InferGetStaticPropsType } from "next"
 import Head from "next/head"
-import path from "path"
-import { readdirSync } from "fs"
+import { readFileSync } from "fs"
 import { ITool } from "../interface/tool"
 
 import { Layout } from "../components/Layout"
@@ -13,40 +12,50 @@ import { CountLength } from "../tools/CountLength"
 import { ConvertEnv } from "../tools/ConvertEnv"
 import { CleanData } from "../tools/CleanData"
 
-export const getStaticProps: GetStaticProps = (context) => {
-  const fuga = readdirSync(path.join(__dirname))
-  console.log(fuga)
-
-  return {
-    props: {}, // will be passed to the page component as props
+type Props = {
+  tools: {
+    [slug: string]: {
+      slug: string
+      componentName: string
+      title: string
+      description?: string
+    }
   }
 }
 
-const Index = (): JSX.Element => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const path = `${process.cwd()}/public/tools.json`
+  const file = readFileSync(path)
+  const data = JSON.parse(file.toString())
+
+  return {
+    props: {
+      tools: data,
+    },
+  }
+}
+
+const Index = ({
+  tools: _tools,
+}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   const tools: ITool[] = [
     {
-      slug: "remove-line-breaks",
-      title: "Remove Line Breaks",
+      ..._tools["remove-line-breaks"],
       pinned: false,
       component: RemoveLineBreaks,
     },
     {
-      slug: "count-length",
-      title: "Count Length",
-      description: `文字数をカウントします`,
+      ..._tools["count-length"],
       pinned: false,
       component: CountLength,
     },
     {
-      slug: "convert-env",
-      title: "Convert Env",
-      description: `JSONのデータをenvのフォーマットに変換します`,
+      ..._tools["convert-env"],
       pinned: false,
       component: ConvertEnv,
     },
     {
-      slug: "clean-the-data",
-      title: "Clean the Data",
+      ..._tools["clean-the-data"],
       pinned: false,
       component: CleanData,
     },
