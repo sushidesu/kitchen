@@ -7,6 +7,7 @@ import { Layout } from "../components/Layout"
 import { Container } from "../components/Container"
 import { Card } from "../components/Card"
 
+import { ToolTypes } from "../types/tools"
 import { RemoveLineBreaks } from "../tools/RemoveLineBreaks"
 import { CountLength } from "../tools/CountLength"
 import { ConvertEnv } from "../tools/ConvertEnv"
@@ -14,7 +15,7 @@ import { CleanData } from "../tools/CleanData"
 
 type Props = {
   tools: {
-    [slug: string]: {
+    [slug in ToolTypes]: {
       slug: string
       componentName: string
       title: string

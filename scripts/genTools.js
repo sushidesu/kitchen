@@ -12,14 +12,20 @@ function main() {
   const configFiles = toolDirs.map(dirName => [path.join(TOOLS_DIR, dirName, TOOL_FILE_NAME), dirName])
 
   const tools = {}
+  const slugs = []
   configFiles.forEach(([filePath, dirName]) => {
     const tool = require(filePath)
+    slugs.push(tool.slug)
     tools[tool.slug] = {
       ...tool,
       componentName: dirName
     }
   })
+
+  const tools_types = `export type ToolTypes = ${slugs.map(slug => `"${slug}"`).join(" | ")}`
+
   writeFileSync(path.join(ROOT_DIR, "public", "tools.json"), JSON.stringify(tools, undefined , 2))
+  writeFileSync(path.join(ROOT_DIR, "src", "types", "tools.ts"), tools_types)
 }
 
 main()
