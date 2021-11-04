@@ -11,4 +11,3 @@ describe("regression test", () => {
     expect(cleanData(before2)).toBe(after2)
   })
 })
-

@@ -5,10 +5,10 @@ import { Layout } from "../components/Layout"
 import { Container } from "../components/Container"
 import { Card } from "../components/Card"
 
-import { RemoveLineBreaks } from "../components/RemoveLineBreaks"
-import { CountLength } from "../components/CountLength"
-import { ConvertEnv } from "../components/ConvertEnv"
-import { CleanData } from "../components/CleanData"
+import { RemoveLineBreaks } from "../tools/RemoveLineBreaks"
+import { CountLength } from "../tools/CountLength"
+import { ConvertEnv } from "../tools/ConvertEnv"
+import { CleanData } from "../tools/CleanData"
 
 const Index = (): JSX.Element => {
   const tools: ITool[] = [
