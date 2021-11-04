@@ -1,7 +1,7 @@
 import { css } from "styled-components"
 import { useInput } from "../../hooks/useInput"
 import { Textarea } from "@chakra-ui/react"
-import { Input } from "../../components/Input"
+import { InputGroup, Input, InputLeftAddon } from "@chakra-ui/react"
 
 export function ConvertEnv(): JSX.Element {
   const { text: prefix, change: changePrefix } = useInput()
@@ -37,7 +37,10 @@ export function ConvertEnv(): JSX.Element {
         }
       `}
     >
-      <Input label={"prefix"} value={prefix} onChange={changePrefix} />
+      <InputGroup>
+        <InputLeftAddon>{"prefix"}</InputLeftAddon>
+        <Input label={"prefix"} value={prefix} onChange={changePrefix} />
+      </InputGroup>
       <Textarea value={text} onChange={change} />
       <Textarea readOnly value={converted} />
     </div>
