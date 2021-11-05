@@ -13,7 +13,7 @@ import { Container } from "./Container"
 export const Header = (): JSX.Element => {
   const { toggleColorMode, colorMode } = useColorMode()
   return (
-    <Container>
+    <Container as="header">
       <Flex px="4" height="full" alignItems="center">
         <Box>
           <Heading fontSize="2xl">Kitchen 🍳</Heading>
