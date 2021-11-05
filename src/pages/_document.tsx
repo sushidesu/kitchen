@@ -2,8 +2,14 @@ import React from "react"
 import NextDocument, {
   DocumentContext,
   DocumentInitialProps,
+  Html,
+  Head,
+  Main,
+  NextScript,
 } from "next/document"
 import { ServerStyleSheet } from "styled-components"
+import { ColorModeScript } from "@chakra-ui/react"
+import theme from "../styles/theme"
 
 export default class Document extends NextDocument {
   static async getInitialProps(
@@ -30,5 +36,17 @@ export default class Document extends NextDocument {
     } finally {
       sheet.seal()
     }
+  }
+  render() {
+    return (
+      <Html lang="ja">
+        <Head />
+        <body>
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
   }
 }
