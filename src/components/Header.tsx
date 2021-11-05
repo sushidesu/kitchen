@@ -5,8 +5,10 @@ import {
   Flex,
   Spacer,
   Box,
+  Stack,
   Switch,
 } from "@chakra-ui/react"
+import { SunIcon, MoonIcon } from "@chakra-ui/icons"
 import { Container } from "./Container"
 
 export const Header = (): JSX.Element => {
@@ -18,9 +20,14 @@ export const Header = (): JSX.Element => {
           <Heading size="lg">Kitchen 🍳</Heading>
         </Box>
         <Spacer />
-        <Box>
-          <Switch isChecked={colorMode === "dark"} onChange={toggleColorMode} />
-        </Box>
+        <Stack alignItems="center" direction="row">
+          <MoonIcon />
+          <Switch
+            isChecked={colorMode === "light"}
+            onChange={toggleColorMode}
+          />
+          <SunIcon />
+        </Stack>
       </Flex>
     </Container>
   )
