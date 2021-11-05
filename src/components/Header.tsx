@@ -1,19 +1,21 @@
 import React from "react"
 import styled from "styled-components"
+import { Flex, Spacer, Box, Switch } from "@chakra-ui/react"
 import { Container } from "./Container"
 
 export const Header = (): JSX.Element => (
-  <Wrapper>
-    <Container>
-      <Title>Kitchen 🍳</Title>
-    </Container>
-  </Wrapper>
+  <Container>
+    <Flex alignItems="center">
+      <Box>
+        <Title>Kitchen 🍳</Title>
+      </Box>
+      <Spacer />
+      <Box>
+        <Switch />
+      </Box>
+    </Flex>
+  </Container>
 )
-
-const Wrapper = styled.header`
-  background-color: #fff;
-  border-bottom: 2px solid #efefef;
-`
 
 const Title = styled.span`
   display: inline-block;
