@@ -15,6 +15,7 @@ export const Card = ({
       px="6"
       py="4"
       border="1px"
+      boxShadow="md"
       borderColor={colorMode === "light" ? "gray.200" : "whiteAlpha.300"}
       rounded="md"
     >

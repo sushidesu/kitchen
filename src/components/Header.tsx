@@ -14,9 +14,9 @@ export const Header = (): JSX.Element => {
   const { toggleColorMode, colorMode } = useColorMode()
   return (
     <Container>
-      <Flex height="full" alignItems="center">
+      <Flex px="4" height="full" alignItems="center">
         <Box>
-          <Heading size="lg">Kitchen 🍳</Heading>
+          <Heading fontSize="2xl">Kitchen 🍳</Heading>
         </Box>
         <Spacer />
         <Stack alignItems="center" direction="row">
