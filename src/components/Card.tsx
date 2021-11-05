@@ -1,4 +1,4 @@
-import { Stack, useColorMode } from "@chakra-ui/react"
+import { Stack, Text, Heading, useColorMode } from "@chakra-ui/react"
 import { ITool } from "../interface/tool"
 
 type CardProps = ITool
@@ -18,8 +18,12 @@ export const Card = ({
       borderColor={colorMode === "light" ? "gray.200" : "whiteAlpha.300"}
       rounded="md"
     >
-      <h2>{title}</h2>
-      <p>{description}</p>
+      <Heading as="h2" size="sm">
+        {title}
+      </Heading>
+      <Text fontSize="sm" color="gray.500">
+        {description}
+      </Text>
       <Component />
     </Stack>
   )
