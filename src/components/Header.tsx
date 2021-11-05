@@ -1,13 +1,12 @@
 import React from "react"
-import styled from "styled-components"
-import { Flex, Spacer, Box, Switch } from "@chakra-ui/react"
+import { Heading, Flex, Spacer, Box, Switch } from "@chakra-ui/react"
 import { Container } from "./Container"
 
 export const Header = (): JSX.Element => (
   <Container>
-    <Flex alignItems="center">
+    <Flex height="full" alignItems="center">
       <Box>
-        <Title>Kitchen 🍳</Title>
+        <Heading size="lg">Kitchen 🍳</Heading>
       </Box>
       <Spacer />
       <Box>
@@ -16,11 +15,3 @@ export const Header = (): JSX.Element => (
     </Flex>
   </Container>
 )
-
-const Title = styled.span`
-  display: inline-block;
-  font-weight: bold;
-  font-size: 1.4em;
-  line-height: 44px;
-  margin-left: 8px;
-`
