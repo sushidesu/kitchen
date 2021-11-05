@@ -1,4 +1,5 @@
 import Head from "next/head"
+import { Stack } from "@chakra-ui/react"
 import { ITool } from "../interface/tool"
 
 import { Layout } from "../components/Layout"
@@ -54,9 +55,11 @@ const Index = (): JSX.Element => {
       </Head>
 
       <Container>
-        {tools.map((tool) => (
-          <Card key={tool.slug} {...tool} />
-        ))}
+        <Stack py="4" direction="column" spacing="8">
+          {tools.map((tool) => (
+            <Card key={tool.slug} {...tool} />
+          ))}
+        </Stack>
       </Container>
     </Layout>
   )
