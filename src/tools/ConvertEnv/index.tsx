@@ -1,4 +1,4 @@
-import { css } from "styled-components"
+import { Stack } from "@chakra-ui/react"
 import { useInput } from "../../hooks/useInput"
 import { Textarea } from "@chakra-ui/react"
 import { InputGroup, Input, InputLeftAddon } from "@chakra-ui/react"
@@ -26,23 +26,13 @@ export function ConvertEnv(): JSX.Element {
     .join("\n")
 
   return (
-    <div
-      css={css`
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        & > * + * {
-          margin-top: 1em;
-        }
-      `}
-    >
+    <Stack spacing={"4"}>
       <InputGroup>
         <InputLeftAddon>{"prefix"}</InputLeftAddon>
         <Input label={"prefix"} value={prefix} onChange={changePrefix} />
       </InputGroup>
       <Textarea value={text} onChange={change} />
       <Textarea readOnly value={converted} />
-    </div>
+    </Stack>
   )
 }

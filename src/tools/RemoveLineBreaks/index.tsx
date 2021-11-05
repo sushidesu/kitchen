@@ -1,5 +1,5 @@
-import React, { useMemo } from "react"
-import styled from "styled-components"
+import { useMemo } from "react"
+import { Stack } from "@chakra-ui/react"
 import { useInput } from "../../hooks/useInput"
 import { Textarea } from "@chakra-ui/react"
 
@@ -9,20 +9,9 @@ export const RemoveLineBreaks = (): JSX.Element => {
   const removed = useMemo(() => text.replace(/\r?\n/g, ""), [text])
 
   return (
-    <Wrapper>
+    <Stack spacing={"4"}>
       <Textarea value={text} onChange={change} />
       <Textarea value={removed} readOnly />
-    </Wrapper>
+    </Stack>
   )
 }
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  & > textarea:first-child {
-    margin-bottom: 1em;
-  }
-`
