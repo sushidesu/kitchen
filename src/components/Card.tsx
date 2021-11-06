@@ -13,7 +13,8 @@ export const Card = ({
     <Stack
       direction="column"
       px="6"
-      py="4"
+      pt="4"
+      pb="7"
       border="1px"
       boxShadow="md"
       borderColor={colorMode === "light" ? "gray.200" : "whiteAlpha.300"}
