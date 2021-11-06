@@ -13,7 +13,7 @@ import { SunIcon, MoonIcon } from "@chakra-ui/icons"
 export const Header = (): JSX.Element => {
   const { toggleColorMode, colorMode } = useColorMode()
   return (
-    <Container as="header">
+    <Container height="full" as="header">
       <Flex px="4" height="full" alignItems="center">
         <Box>
           <Heading fontSize="2xl">Kitchen 🍳</Heading>

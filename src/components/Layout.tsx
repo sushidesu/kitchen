@@ -1,34 +1,28 @@
-import React from "react"
-import styled from "styled-components"
+import { Grid, GridItem } from "@chakra-ui/react"
 import { Header } from "./Header"
 import { Footer } from "./Footer"
 
-export const Layout: React.FC = ({ children }) => (
-  <Wrapper>
-    <Header />
-    <main>{children}</main>
-    <Footer />
-  </Wrapper>
+type LayoutProps = {
+  children?: React.ReactNode
+}
+
+export const Layout = ({ children }: LayoutProps): JSX.Element => (
+  <Grid
+    minH="100vh"
+    gridTemplateRows="44px 1fr 44px"
+    gridTemplateAreas={`"header"
+"main"
+"footer"
+`}
+  >
+    <GridItem gridArea="header">
+      <Header />
+    </GridItem>
+    <GridItem gridArea="main">
+      <main>{children}</main>
+    </GridItem>
+    <GridItem gridArea="footer">
+      <Footer />
+    </GridItem>
+  </Grid>
 )
-
-const Wrapper = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: 44px 1fr 44px;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
-
-  & > header {
-    grid-area: header;
-  }
-  & > main {
-    grid-area: main;
-  }
-  & > footer {
-    grid-area: footer;
-  }
-`
