@@ -1,9 +1,8 @@
 import Head from "next/head"
-import { Stack } from "@chakra-ui/react"
+import { Container, Stack } from "@chakra-ui/react"
 import { ITool } from "../interface/tool"
 
 import { Layout } from "../components/Layout"
-import { Container } from "../components/Container"
 import { Card } from "../components/Card"
 
 import toolDataJson from "../../public/tools.json"

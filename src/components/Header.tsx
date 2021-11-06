@@ -1,4 +1,5 @@
 import {
+  Container,
   useColorMode,
   Heading,
   Flex,
@@ -8,7 +9,6 @@ import {
   Switch,
 } from "@chakra-ui/react"
 import { SunIcon, MoonIcon } from "@chakra-ui/icons"
-import { Container } from "./Container"
 
 export const Header = (): JSX.Element => {
   const { toggleColorMode, colorMode } = useColorMode()
