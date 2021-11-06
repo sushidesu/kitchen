@@ -1,44 +1,28 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next"
 import Head from "next/head"
-import { readFileSync } from "fs"
+import { Container, Stack } from "@chakra-ui/react"
 import { ITool } from "../interface/tool"
 
 import { Layout } from "../components/Layout"
-import { Container } from "../components/Container"
 import { Card } from "../components/Card"
 
+import toolDataJson from "../../public/tools.json"
 import { ToolTypes } from "../types/tools"
 import { RemoveLineBreaks } from "../tools/RemoveLineBreaks"
 import { CountLength } from "../tools/CountLength"
 import { ConvertEnv } from "../tools/ConvertEnv"
 import { CleanData } from "../tools/CleanData"
 
-type Props = {
-  tools: {
-    [slug in ToolTypes]: {
-      slug: string
-      componentName: string
-      title: string
-      description?: string
-    }
+type ToolData = {
+  [slug in ToolTypes]: {
+    slug: string
+    componentName: string
+    title: string
+    description?: string
   }
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const path = `${process.cwd()}/public/tools.json`
-  const file = readFileSync(path)
-  const data = JSON.parse(file.toString())
-
-  return {
-    props: {
-      tools: data,
-    },
-  }
-}
-
-const Index = ({
-  tools: _tools,
-}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
+const Index = (): JSX.Element => {
+  const _tools = toolDataJson as ToolData
   const tools: ITool[] = [
     {
       ..._tools["remove-line-breaks"],
@@ -70,9 +54,11 @@ const Index = ({
       </Head>
 
       <Container>
-        {tools.map((tool) => (
-          <Card key={tool.slug} {...tool} />
-        ))}
+        <Stack py="4" direction="column" spacing="8">
+          {tools.map((tool) => (
+            <Card key={tool.slug} {...tool} />
+          ))}
+        </Stack>
       </Container>
     </Layout>
   )

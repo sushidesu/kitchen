@@ -1,11 +1,16 @@
-import styled from "styled-components"
+import { Stack, Text } from "@chakra-ui/react"
 
-export const Footer = (): JSX.Element => <Wrapper>© sushidesu</Wrapper>
-
-const Wrapper = styled.footer`
-  background-color: rgb(250, 250, 250);
-  color: #787878;
-  text-align: center;
-  line-height: 44px;
-  border-top: 1px solid rgb(234, 234, 234);
-`
+export const Footer = (): JSX.Element => {
+  return (
+    <Stack
+      height="full"
+      as="footer"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Text align="center" color="gray.400">
+        &copy; sushidesu
+      </Text>
+    </Stack>
+  )
+}

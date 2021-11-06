@@ -1,5 +1,4 @@
-import React from "react"
-import styled from "styled-components"
+import { Stack, Text, Heading, useColorMode } from "@chakra-ui/react"
 import { ITool } from "../interface/tool"
 
 type CardProps = ITool
@@ -8,22 +7,26 @@ export const Card = ({
   component: Component,
   title,
   description,
-}: CardProps): JSX.Element => (
-  <Wrapper>
-    <h2>{title}</h2>
-    <p>{description}</p>
-    <Component />
-  </Wrapper>
-)
-
-const Wrapper = styled.article`
-  border-radius: 6px;
-  box-shadow: 4px 4px 14px rgba(203, 203, 203, 0.8);
-  margin: 20px 10px;
-  padding: 10px 20px 20px 20px;
-
-  & > h2 {
-    font-size: 1.1em;
-    margin-bottom: 1em;
-  }
-`
+}: CardProps): JSX.Element => {
+  const { colorMode } = useColorMode()
+  return (
+    <Stack
+      direction="column"
+      px="6"
+      pt="4"
+      pb="7"
+      border="1px"
+      boxShadow="md"
+      borderColor={colorMode === "light" ? "gray.200" : "whiteAlpha.300"}
+      rounded="md"
+    >
+      <Heading as="h2" size="sm">
+        {title}
+      </Heading>
+      <Text fontSize="sm" color="gray.500">
+        {description}
+      </Text>
+      <Component />
+    </Stack>
+  )
+}

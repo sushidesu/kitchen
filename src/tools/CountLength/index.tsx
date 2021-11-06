@@ -1,28 +1,16 @@
-import React from "react"
-import styled from "styled-components"
+import { Stack, Stat, StatNumber } from "@chakra-ui/react"
 import { useInput } from "../../hooks/useInput"
-import { Textarea } from "../../components/Textarea"
+import { Textarea } from "@chakra-ui/react"
 
 export const CountLength = (): JSX.Element => {
   const { text, change } = useInput()
 
   return (
-    <Wrapper>
-      <Count>{text.length}</Count>
+    <Stack alignItems="center" spacing={"4"}>
+      <Stat>
+        <StatNumber>{text.length}</StatNumber>
+      </Stat>
       <Textarea value={text} onChange={change} />
-    </Wrapper>
+    </Stack>
   )
 }
-
-const Count = styled.p`
-  font-size: 1.2em;
-  font-weight: bold;
-  margin-bottom: 1em;
-`
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
