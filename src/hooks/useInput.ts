@@ -1,5 +1,7 @@
 import React, { useState, useCallback } from "react"
 
+type ResetFunction = () => void
+
 export const useInput = (
   init?: string
 ): [
@@ -9,7 +11,8 @@ export const useInput = (
   >,
   React.FocusEventHandler<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
-  >
+  >,
+  ResetFunction
 ] => {
   const [text, setText] = useState(init ?? "")
 
@@ -29,5 +32,9 @@ export const useInput = (
     setText(event.target.value)
   }, [])
 
-  return [text, onChange, onBlur]
+  const reset = useCallback(() => {
+    setText(init ?? "")
+  }, [])
+
+  return [text, onChange, onBlur, reset]
 }

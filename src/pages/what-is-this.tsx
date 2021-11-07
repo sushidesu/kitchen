@@ -15,8 +15,8 @@ import { SEOHeaders } from "../components/SEOHeaders"
 import { useInput } from "../hooks/useInput"
 
 function WhatIsThisPage(): JSX.Element {
-  const [name, handleChangeName] = useInput()
-  const [body, handleChangeBody] = useInput()
+  const [name, handleChangeName, , resetName] = useInput()
+  const [body, handleChangeBody, , resetBody] = useInput()
 
   const sendMessage = async () => {
     const result = await fetch(process.env.NEXT_PUBLIC_SEND_MESSAGE_URL ?? "", {
@@ -32,6 +32,11 @@ ${body}
 `,
       }),
     })
+
+    if (result.ok) {
+      resetName()
+      resetBody()
+    }
     window.alert(result.ok ? "OK" : "Failed")
   }
   return (
