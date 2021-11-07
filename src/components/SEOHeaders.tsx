@@ -5,10 +5,13 @@ type TitleType = "top" | "page" | "noTitleTemplate"
 type SEOHeadersProps = {
   title?: string
   titleType?: TitleType
+  descriptions?: string
 }
 
 export function SEOHeaders(props: SEOHeadersProps): JSX.Element {
-  const { title = "", titleType = "top" } = props
+  const DEFAULT_DESC = "A collection of useful tools for sushidesu"
+
+  const { title = "", titleType = "top", descriptions = DEFAULT_DESC } = props
 
   const APP_NAME = "Kitchen"
   const APP_ORIGIN_ROOT_URL = "https://kitchen.dayo.app"
@@ -37,12 +40,14 @@ export function SEOHeaders(props: SEOHeadersProps): JSX.Element {
   return (
     <NextHeadSeo
       title={page_title[titleType]}
+      description={descriptions}
       canonical={APP_ORIGIN_ROOT_URL}
       twitter={{
         card: "summary_large_image",
       }}
       og={{
         siteName: APP_NAME,
+        description: descriptions,
         type: "website",
         url: APP_ROOT_URL,
         image: OG_IMAGE_URL,
