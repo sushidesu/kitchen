@@ -17,7 +17,7 @@ function WhatIsThisPage(): JSX.Element {
   return (
     <Layout>
       <SEOHeaders title="これは何？" titleType="page" />
-      <Container py="4">
+      <Container py="8">
         <Stack direction="column" spacing="8">
           <Stack direction="column">
             <Heading fontSize="lg">これは何？</Heading>

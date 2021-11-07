@@ -51,7 +51,7 @@ const Index = (): JSX.Element => {
       <SEOHeaders titleType="top" />
 
       <Container>
-        <Stack py="4" direction="column" spacing="8">
+        <Stack py="8" direction="column" spacing="8">
           {tools.map((tool) => (
             <Card key={tool.slug} {...tool} />
           ))}
