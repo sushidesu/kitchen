@@ -13,12 +13,13 @@ export function SEOHeaders(props: SEOHeadersProps): JSX.Element {
   const APP_NAME = "Kitchen"
   const APP_ORIGIN_ROOT_URL = "https://kitchen.dayo.app"
   const APP_LOCAL_ROOT_URL = "http://localhost:3000"
+  const APP_PUBLIC_ROOT_URL = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
   const APP_ROOT_URL = (() => {
     switch (process.env.NEXT_PUBLIC_VERCEL_ENV) {
       case "production":
         return APP_ORIGIN_ROOT_URL
       case "preview":
-        return process.env.NEXT_PUBLIC_VERCEL_URL ?? ""
+        return APP_PUBLIC_ROOT_URL
       case "development":
         return APP_LOCAL_ROOT_URL
       default:
@@ -32,7 +33,6 @@ export function SEOHeaders(props: SEOHeadersProps): JSX.Element {
     page: `${title} - ${APP_NAME}`,
     noTitleTemplate: title,
   }
-  console.log(process.env)
 
   return (
     <NextHeadSeo
