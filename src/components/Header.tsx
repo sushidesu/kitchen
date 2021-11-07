@@ -2,29 +2,26 @@ import NextLink from "next/link"
 import {
   Container,
   useColorMode,
-  Heading,
   Flex,
   Spacer,
-  Box,
   Link,
   Text,
   Stack,
   Switch,
 } from "@chakra-ui/react"
 import { SunIcon, MoonIcon } from "@chakra-ui/icons"
+import Logo from "../assets/kitchen.svg"
 
 export const Header = (): JSX.Element => {
   const { toggleColorMode, colorMode } = useColorMode()
   return (
     <Container height="full" as="header">
       <Flex px="1" height="full" alignItems="center">
-        <Box>
-          <Heading fontSize="2xl">
-            <NextLink href="/" passHref>
-              <a>Kitchen 🍳</a>
-            </NextLink>
-          </Heading>
-        </Box>
+        <NextLink href="/" passHref>
+          <a>
+            <Logo height="26" />
+          </a>
+        </NextLink>
         <Spacer />
         <Stack direction="row" alignItems="center" spacing="4">
           <Text>
