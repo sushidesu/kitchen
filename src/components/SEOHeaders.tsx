@@ -32,6 +32,7 @@ export function SEOHeaders(props: SEOHeadersProps): JSX.Element {
     page: `${title} - ${APP_NAME}`,
     noTitleTemplate: title,
   }
+  console.log(process.env.NEXT_PUBLIC_VERCEL_ENV)
 
   return (
     <NextHeadSeo
