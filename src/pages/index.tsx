@@ -1,7 +1,7 @@
-import Head from "next/head"
 import { Container, Stack } from "@chakra-ui/react"
 import { ITool } from "../interface/tool"
 
+import { SEOHeaders } from "../components/SEOHeaders"
 import { Layout } from "../components/Layout"
 import { Card } from "../components/Card"
 
@@ -48,10 +48,7 @@ const Index = (): JSX.Element => {
 
   return (
     <Layout>
-      <Head>
-        <title>Kitchen</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEOHeaders titleType="top" />
 
       <Container>
         <Stack py="4" direction="column" spacing="8">
