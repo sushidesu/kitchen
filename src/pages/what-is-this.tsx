@@ -12,8 +12,12 @@ import {
 } from "@chakra-ui/react"
 import { Layout } from "../components/Layout"
 import { SEOHeaders } from "../components/SEOHeaders"
+import { useInput } from "../hooks/useInput"
 
 function WhatIsThisPage(): JSX.Element {
+  const { text: name, change: changeName } = useInput()
+  const { text: body, change: changeBody } = useInput()
+
   const sendMessage = async () => {
     const result = await fetch(process.env.NEXT_PUBLIC_SEND_MESSAGE_URL ?? "", {
       method: "POST",
@@ -21,10 +25,14 @@ function WhatIsThisPage(): JSX.Element {
         "Content-Type": "application/json",
       },
       mode: "cors",
-      body: JSON.stringify({ message: "hello!!!!" }),
+      body: JSON.stringify({
+        message: `お名前: ${name}
+要望・感想など:
+${body}
+`,
+      }),
     })
-    const body = await result.text()
-    window.alert(body)
+    window.alert(result.ok ? "OK" : "Failed")
   }
   return (
     <Layout>
@@ -40,15 +48,19 @@ function WhatIsThisPage(): JSX.Element {
           <Stack direction="column">
             <FormControl isRequired>
               <FormLabel>お名前</FormLabel>
-              <Input />
+              <Input value={name} onChange={changeName} />
             </FormControl>
             <FormControl isRequired>
               <FormLabel>要望・感想など</FormLabel>
-              <Textarea rows={8} />
+              <Textarea value={body} onChange={changeBody} rows={8} />
             </FormControl>
           </Stack>
           <ButtonGroup justifyContent="center">
-            <Button onClick={sendMessage} px="12">
+            <Button
+              disabled={name === "" || body === ""}
+              onClick={sendMessage}
+              px="12"
+            >
               送信
             </Button>
           </ButtonGroup>
