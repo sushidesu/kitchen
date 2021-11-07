@@ -11,10 +11,20 @@ export function SEOHeaders(props: SEOHeadersProps): JSX.Element {
   const { title = "", titleType = "top" } = props
 
   const APP_NAME = "Kitchen"
-  const APP_ROOT_URL =
-    process.env.NODE_ENV !== "production"
-      ? "http://localhost:3000"
-      : process.env.NEXT_PUBLIC_APP_ROOT_URL
+  const APP_ORIGIN_ROOT_URL = "https://kitchen.dayo.app"
+  const APP_LOCAL_ROOT_URL = "http://localhost:3000"
+  const APP_ROOT_URL = (() => {
+    switch (process.env.NEXT_PUBLIC_VERCEL_ENV) {
+      case "production":
+        return APP_ORIGIN_ROOT_URL
+      case "preview":
+        return process.env.NEXT_PUBLIC_VERCEL_URL ?? ""
+      case "development":
+        return APP_LOCAL_ROOT_URL
+      default:
+        return APP_LOCAL_ROOT_URL
+    }
+  })()
   const OG_IMAGE_URL = `${APP_ROOT_URL}/ogp.png`
 
   const page_title: { [key in TitleType]: string } = {
@@ -26,7 +36,7 @@ export function SEOHeaders(props: SEOHeadersProps): JSX.Element {
   return (
     <NextHeadSeo
       title={page_title[titleType]}
-      canonical={APP_ROOT_URL}
+      canonical={APP_ORIGIN_ROOT_URL}
       twitter={{
         card: "summary_large_image",
       }}
