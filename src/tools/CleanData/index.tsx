@@ -3,7 +3,7 @@ import { useInput } from "../../hooks/useInput"
 import { cleanData } from "./cleanData"
 
 export function CleanData(): JSX.Element {
-  const { text, change } = useInput()
+  const [text, change] = useInput()
   const cleaned = cleanData(text)
 
   return (

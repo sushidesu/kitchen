@@ -3,7 +3,7 @@ import { useInput } from "../../hooks/useInput"
 import { Textarea } from "@chakra-ui/react"
 
 export const CountLength = (): JSX.Element => {
-  const { text, change } = useInput()
+  const [text, change] = useInput()
 
   return (
     <Stack alignItems="center" spacing={"4"}>

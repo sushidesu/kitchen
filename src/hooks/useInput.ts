@@ -2,29 +2,32 @@ import React, { useState, useCallback } from "react"
 
 export const useInput = (
   init?: string
-): {
-  text: string
-  change: (
-    event: React.ChangeEvent<
+): [
+  string,
+  React.ChangeEventHandler<
+    HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
+  >,
+  React.FocusEventHandler<
+    HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
+  >
+] => {
+  const [text, setText] = useState(init ?? "")
+
+  const onChange = useCallback<
+    React.FocusEventHandler<
       HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
     >
-  ) => void
-} => {
-  const [text, setText] = useState(init || "")
+  >((event) => {
+    setText(event.target.value)
+  }, [])
 
-  const change = useCallback(
-    (
-      event: React.ChangeEvent<
-        HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
-      >
-    ) => {
-      setText(event.target.value)
-    },
-    [setText]
-  )
+  const onBlur = useCallback<
+    React.FocusEventHandler<
+      HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
+    >
+  >((event) => {
+    setText(event.target.value)
+  }, [])
 
-  return {
-    text,
-    change,
-  }
+  return [text, onChange, onBlur]
 }

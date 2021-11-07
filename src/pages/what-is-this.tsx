@@ -15,8 +15,8 @@ import { SEOHeaders } from "../components/SEOHeaders"
 import { useInput } from "../hooks/useInput"
 
 function WhatIsThisPage(): JSX.Element {
-  const { text: name, change: changeName } = useInput()
-  const { text: body, change: changeBody } = useInput()
+  const [name, handleChangeName] = useInput()
+  const [body, handleChangeBody] = useInput()
 
   const sendMessage = async () => {
     const result = await fetch(process.env.NEXT_PUBLIC_SEND_MESSAGE_URL ?? "", {
@@ -48,11 +48,11 @@ ${body}
           <Stack direction="column">
             <FormControl isRequired>
               <FormLabel>お名前</FormLabel>
-              <Input value={name} onChange={changeName} />
+              <Input value={name} onChange={handleChangeName} />
             </FormControl>
             <FormControl isRequired>
               <FormLabel>要望・感想など</FormLabel>
-              <Textarea value={body} onChange={changeBody} rows={8} />
+              <Textarea value={body} onChange={handleChangeBody} rows={8} />
             </FormControl>
           </Stack>
           <ButtonGroup justifyContent="center">

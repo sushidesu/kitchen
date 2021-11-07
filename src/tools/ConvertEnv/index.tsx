@@ -4,8 +4,8 @@ import { Textarea } from "@chakra-ui/react"
 import { InputGroup, Input, InputLeftAddon } from "@chakra-ui/react"
 
 export function ConvertEnv(): JSX.Element {
-  const { text: prefix, change: changePrefix } = useInput()
-  const { text, change } = useInput()
+  const [prefix, changePrefix] = useInput()
+  const [text, changeText] = useInput()
 
   const converter = (line: string): string => {
     let result = line
@@ -31,7 +31,7 @@ export function ConvertEnv(): JSX.Element {
         <InputLeftAddon>{"prefix"}</InputLeftAddon>
         <Input label={"prefix"} value={prefix} onChange={changePrefix} />
       </InputGroup>
-      <Textarea value={text} onChange={change} />
+      <Textarea value={text} onChange={changeText} />
       <Textarea readOnly value={converted} />
     </Stack>
   )
