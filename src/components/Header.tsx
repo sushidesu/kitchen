@@ -15,7 +15,12 @@ import Logo from "../assets/kitchen.svg"
 export const Header = (): JSX.Element => {
   const { toggleColorMode, colorMode } = useColorMode()
   return (
-    <Container height="full" as="header">
+    <Container
+      height="full"
+      as="header"
+      backgroundColor={colorMode === "light" ? undefined : "gray.500"}
+      boxShadow="md"
+    >
       <Flex px="1" height="full" alignItems="center">
         <NextLink href="/" passHref>
           <a>
