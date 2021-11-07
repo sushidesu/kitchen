@@ -13,12 +13,15 @@ import {
 import { Layout } from "../components/Layout"
 import { SEOHeaders } from "../components/SEOHeaders"
 import { useInput } from "../hooks/useInput"
+import { useLoading } from "../hooks/useLoading"
 
 function WhatIsThisPage(): JSX.Element {
   const [name, handleChangeName, , resetName] = useInput()
   const [body, handleChangeBody, , resetBody] = useInput()
+  const [loading, setLoading] = useLoading()
 
   const sendMessage = async () => {
+    setLoading(true)
     const result = await fetch(process.env.NEXT_PUBLIC_SEND_MESSAGE_URL ?? "", {
       method: "POST",
       headers: {
@@ -38,6 +41,7 @@ ${body}
       resetBody()
     }
     window.alert(result.ok ? "OK" : "Failed")
+    setLoading(false)
   }
   return (
     <Layout>
@@ -62,7 +66,8 @@ ${body}
           </Stack>
           <ButtonGroup justifyContent="center">
             <Button
-              disabled={name === "" || body === ""}
+              isLoading={loading}
+              disabled={loading || name === "" || body === ""}
               onClick={sendMessage}
               px="12"
             >
