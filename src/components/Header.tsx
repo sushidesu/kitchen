@@ -1,5 +1,6 @@
 import NextLink from "next/link"
 import {
+  Box,
   Container,
   useColorMode,
   Flex,
@@ -15,41 +16,43 @@ import Logo from "../assets/kitchen.svg"
 export const Header = (): JSX.Element => {
   const { toggleColorMode, colorMode } = useColorMode()
   return (
-    <Container
-      height="full"
+    <Box
       as="header"
+      height="full"
       backgroundColor={colorMode === "light" ? undefined : "gray.500"}
       boxShadow="md"
     >
-      <Flex px="1" height="full" alignItems="center">
-        <NextLink href="/" passHref>
-          <a>
-            <Logo height="26" />
-          </a>
-        </NextLink>
-        <Spacer />
-        <Stack direction="row" alignItems="center" spacing="4">
-          <Text>
-            <NextLink href="/what-is-this" passHref>
-              <Link
-                fontSize="sm"
-                color={colorMode === "light" ? "blue.500" : "gray.200"}
-              >
-                これは何？
-              </Link>
-            </NextLink>
-          </Text>
-          <Stack alignItems="center" justifyContent="center" direction="row">
-            <MoonIcon />
-            <Switch
-              pt="1"
-              isChecked={colorMode === "light"}
-              onChange={toggleColorMode}
-            />
-            <SunIcon />
+      <Container height="full">
+        <Flex px="1" height="full" alignItems="center">
+          <NextLink href="/" passHref>
+            <a>
+              <Logo height="26" />
+            </a>
+          </NextLink>
+          <Spacer />
+          <Stack direction="row" alignItems="center" spacing="4">
+            <Text>
+              <NextLink href="/what-is-this" passHref>
+                <Link
+                  fontSize="sm"
+                  color={colorMode === "light" ? "blue.500" : "gray.200"}
+                >
+                  これは何？
+                </Link>
+              </NextLink>
+            </Text>
+            <Stack alignItems="center" justifyContent="center" direction="row">
+              <MoonIcon />
+              <Switch
+                pt="1"
+                isChecked={colorMode === "light"}
+                onChange={toggleColorMode}
+              />
+              <SunIcon />
+            </Stack>
           </Stack>
-        </Stack>
-      </Flex>
-    </Container>
+        </Flex>
+      </Container>
+    </Box>
   )
 }
