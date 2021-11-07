@@ -14,6 +14,18 @@ import { Layout } from "../components/Layout"
 import { SEOHeaders } from "../components/SEOHeaders"
 
 function WhatIsThisPage(): JSX.Element {
+  const sendMessage = async () => {
+    const result = await fetch(process.env.NEXT_PUBLIC_SEND_MESSAGE_URL ?? "", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      mode: "cors",
+      body: JSON.stringify({ message: "hello!!!!" }),
+    })
+    const body = await result.text()
+    window.alert(body)
+  }
   return (
     <Layout>
       <SEOHeaders title="これは何？" titleType="page" />
@@ -36,7 +48,9 @@ function WhatIsThisPage(): JSX.Element {
             </FormControl>
           </Stack>
           <ButtonGroup justifyContent="center">
-            <Button px="12">送信</Button>
+            <Button onClick={sendMessage} px="12">
+              送信
+            </Button>
           </ButtonGroup>
         </Stack>
       </Container>
