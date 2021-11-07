@@ -27,14 +27,20 @@ export const Header = (): JSX.Element => {
         </Box>
         <Spacer />
         <Stack direction="row" alignItems="center" spacing="4">
-          <Text mt="1">
+          <Text>
             <NextLink href="/what-is-this" passHref>
-              <Link color="blue.600">これは何？</Link>
+              <Link
+                fontSize="sm"
+                color={colorMode === "light" ? "blue.500" : "gray.200"}
+              >
+                これは何？
+              </Link>
             </NextLink>
           </Text>
-          <Stack alignItems="center" direction="row">
+          <Stack alignItems="center" justifyContent="center" direction="row">
             <MoonIcon />
             <Switch
+              pt="1"
               isChecked={colorMode === "light"}
               onChange={toggleColorMode}
             />
