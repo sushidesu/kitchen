@@ -14,6 +14,7 @@ import { Layout } from "../components/Layout"
 import { SEOHeaders } from "../components/SEOHeaders"
 import { useInput } from "../hooks/useInput"
 import { useLoading } from "../hooks/useLoading"
+import { Sketch } from "../components/Sketch"
 
 function WhatIsThisPage(): JSX.Element {
   const [name, handleChangeName, , resetName] = useInput()
@@ -63,6 +64,9 @@ ${body}
               <FormLabel>要望・感想など</FormLabel>
               <Textarea value={body} onChange={handleChangeBody} rows={8} />
             </FormControl>
+            <div>
+              <Sketch color={"#000"} />
+            </div>
           </Stack>
           <ButtonGroup justifyContent="center">
             <Button
