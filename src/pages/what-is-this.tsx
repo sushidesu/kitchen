@@ -15,6 +15,7 @@ import { SEOHeaders } from "../components/SEOHeaders"
 import { useInput } from "../hooks/useInput"
 import { useLoading } from "../hooks/useLoading"
 import { useSketch } from "../components/Sketch/useSketch"
+import { blobToBase64 } from "../utils/blobTobase64"
 
 function WhatIsThisPage(): JSX.Element {
   const [name, handleChangeName, , resetName] = useInput()
@@ -26,10 +27,10 @@ function WhatIsThisPage(): JSX.Element {
   const sendMessage = async () => {
     setLoading(true)
     const blob = await getBlob()
-    const img = document.createElement("img")
-    const url = URL.createObjectURL(blob)
-    img.src = url
-    console.log(img)
+    if (blob !== null) {
+      const str = await blobToBase64(blob)
+      console.log(str)
+    }
     //    const result = await fetch(process.env.NEXT_PUBLIC_SEND_MESSAGE_URL ?? "", {
     //      method: "POST",
     //      headers: {
