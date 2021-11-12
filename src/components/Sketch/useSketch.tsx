@@ -89,6 +89,8 @@ export const useSketch = ({
     getBlob,
     () => (
       <Sketch
+        width={"100px"}
+        height={"100px"}
         ref={canvas}
         onPointerUp={onPointerUp}
         onPointerDown={onPointerDown}
