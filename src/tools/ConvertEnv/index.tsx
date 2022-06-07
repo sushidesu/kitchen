@@ -29,7 +29,7 @@ export function ConvertEnv(): JSX.Element {
     <Stack spacing={"4"}>
       <InputGroup>
         <InputLeftAddon>{"prefix"}</InputLeftAddon>
-        <Input label={"prefix"} value={prefix} onChange={changePrefix} />
+        <Input value={prefix} onChange={changePrefix} />
       </InputGroup>
       <Textarea value={text} onChange={change} />
       <Textarea readOnly value={converted} />
