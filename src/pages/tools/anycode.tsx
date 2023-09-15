@@ -1,6 +1,7 @@
 import {
   Container,
   FormControl,
+  FormHelperText,
   FormLabel,
   Heading,
   Stack,
@@ -68,14 +69,21 @@ const AnycodePage = (): JSX.Element => {
                 <Textarea
                   value={nums}
                   onChange={handleOnChange}
+                  placeholder={"例) 5001"}
                   as={ResizeTextarea}
                 />
+                <FormHelperText>複数行入力できます</FormHelperText>
               </FormControl>
             </Stack>
             <Stack width={"full"}>
               <FormControl width={"full"}>
                 <FormLabel>JAN</FormLabel>
-                <Textarea width={"full"} value={jans} as={ResizeTextarea} />
+                <Textarea
+                  width={"full"}
+                  readOnly
+                  value={jans}
+                  as={ResizeTextarea}
+                />
               </FormControl>
             </Stack>
           </Stack>
