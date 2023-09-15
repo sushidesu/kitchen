@@ -3,3 +3,4 @@ export type ToolTypes =
   | "convert-env"
   | "count-length"
   | "remove-line-breaks"
+  | "scrapbox-to-markdown"

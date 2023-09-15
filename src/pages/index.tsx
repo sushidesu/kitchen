@@ -11,6 +11,7 @@ import { RemoveLineBreaks } from "../tools/RemoveLineBreaks"
 import { CountLength } from "../tools/CountLength"
 import { ConvertEnv } from "../tools/ConvertEnv"
 import { CleanData } from "../tools/CleanData"
+import { ScrapboxToMarkdown } from "../tools/ScrapboxToMarkdown"
 
 type ToolData = {
   [slug in ToolTypes]: {
@@ -43,6 +44,11 @@ const Index = (): JSX.Element => {
       ..._tools["clean-the-data"],
       pinned: false,
       component: CleanData,
+    },
+    {
+      ..._tools["scrapbox-to-markdown"],
+      pinned: false,
+      component: ScrapboxToMarkdown,
     },
   ]
 
