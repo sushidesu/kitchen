@@ -46,7 +46,7 @@ const AnycodePage = (): JSX.Element => {
             return ""
           }
           // 10桁になるまで0埋め
-          const padded = n.padStart(10, "0")
+          const padded = parsed.toString().padStart(10, "0")
           const code = `01${padded}`
           return `${code}${modulus10weight3(code)}`
         })
