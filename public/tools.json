@@ -20,5 +20,11 @@
     "slug": "remove-line-breaks",
     "title": "Remove Line Breaks",
     "componentName": "RemoveLineBreaks"
+  },
+  "scrapbox-to-markdown": {
+    "slug": "scrapbox-to-markdown",
+    "title": "Scrapbox to Markdown",
+    "description": "先頭のスペースを \"- \" に変換します",
+    "componentName": "ScrapboxToMarkdown"
   }
 }
