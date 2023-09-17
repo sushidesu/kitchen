@@ -30,7 +30,7 @@ const AnycodePage = (): JSX.Element => {
     (e) => {
       setNums(e.target.value)
     },
-    []
+    [],
   )
 
   const jans = useMemo(
@@ -52,7 +52,7 @@ const AnycodePage = (): JSX.Element => {
           return `${code}${modulus10weight3(code)}`
         })
         .join("\n"),
-    [nums]
+    [nums],
   )
 
   return (

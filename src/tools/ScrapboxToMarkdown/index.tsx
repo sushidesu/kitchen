@@ -17,7 +17,7 @@ export const ScrapboxToMarkdown = (): JSX.Element => {
           return c
         })
         .join("\n"),
-    [text]
+    [text],
   )
 
   return (

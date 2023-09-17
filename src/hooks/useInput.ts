@@ -1,13 +1,13 @@
 import React, { useState, useCallback } from "react"
 
 export const useInput = (
-  init?: string
+  init?: string,
 ): {
   text: string
   change: (
     event: React.ChangeEvent<
       HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
-    >
+    >,
   ) => void
 } => {
   const [text, setText] = useState(init || "")
@@ -16,11 +16,11 @@ export const useInput = (
     (
       event: React.ChangeEvent<
         HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
-      >
+      >,
     ) => {
       setText(event.target.value)
     },
-    [setText]
+    [setText],
   )
 
   return {
