@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "test": "jest",
+    "test": "vitest",
     "lint": "eslint src --ext .ts,.tsx --fix",
     "format": "prettier **/*.{ts,tsx} --write",
     "generate": "node scripts/genTools.js",
@@ -28,7 +28,6 @@
     "react-textarea-autosize": "^8.5.3"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.5",
     "@types/node": "^20.6.2",
     "@types/react": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
@@ -40,12 +39,10 @@
     "husky": ">=8.0.3",
     "lint-staged": ">=14.0.1",
     "prettier": "^3.0.3",
-    "ts-jest": "^29.1.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vitest": "^1.5.0"
   },
-  "peerDependencies": {
-    "jest": "^27.0.6"
-  },
+  "peerDependencies": {},
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint --cache --fix",
