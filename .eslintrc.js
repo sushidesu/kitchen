@@ -9,4 +9,10 @@ module.exports = {
     project: true,
     tsconfigRootDir: __dirname,
   },
+  rules: {
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+    ],
+  },
 }
